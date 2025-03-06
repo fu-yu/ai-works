@@ -1,0 +1,16 @@
+{
+    "appTitle": "Korean Quiz",
+    "startQuiz": "Start Quiz",
+    "score": "Score: {score}",
+    "@score": {
+        "placeholders": {
+            "score": {
+                "type": "int"
+            }
+        }
+    },
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "next": "Next",
+    "finish": "Finish"
+}

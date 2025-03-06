@@ -1,0 +1,16 @@
+{
+    "appTitle": "韓国語クイズ",
+    "startQuiz": "クイズを開始",
+    "score": "スコア: {score}",
+    "@score": {
+        "placeholders": {
+            "score": {
+                "type": "int"
+            }
+        }
+    },
+    "correct": "正解！",
+    "incorrect": "不正解",
+    "next": "次へ",
+    "finish": "終了"
+}

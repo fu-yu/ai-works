@@ -1,0 +1,84 @@
+# .clinerules for Flutter (Android Only & TDD)
+
+# 言語 & フレームワーク設定
+language:
+  name: "dart"
+  version: ">=3.0.0"
+
+framework:
+  name: "flutter"
+  version: "stable"
+
+# プラットフォームの制限
+platform:
+  target: "android"
+  exclude:
+    - "ios"
+    - "web"
+    - "windows"
+    - "macos"
+    - "linux"
+
+# メモリバンクの設定 (過去の開発データを学習)
+memory_bank:
+  enable: true
+  persistence: true
+  store:
+    - "widget_tree"  # ウィジェットの構成を記憶
+    - "api_calls"  # API のエンドポイントと使用方法を記憶
+    - "state_management"  # 使用する状態管理 (Provider, Riverpod など)
+    - "project_structure"  # プロジェクトのディレクトリ構成
+  apply_to:
+    - "code_generation"
+    - "test_suggestions"
+    - "refactoring"
+  prune:
+    - "temporary_variables"
+    - "debug_logs"
+
+# コードスタイル
+style:
+  indent: 2
+  max_line_length: 100
+  quotes: "single"
+
+# プロジェクト構成
+directories:
+  source: "lib"
+  tests: "test"
+  assets: "assets"
+  localization: "lib/l10n"
+
+# テスト駆動開発 (TDD)
+testing:
+  framework: "flutter_test"
+  enforce_tests: true
+  test_coverage: 85
+  require_failing_test_first: true
+  prevent_commit_without_test: true
+
+# ビルド & 実行コマンド
+commands:
+  build: "flutter build apk"
+  run: "flutter run"
+  test: "flutter test"
+  lint: "flutter analyze"
+
+# CI/CD 設定
+ci:
+  enforce_tests: true
+  pipeline:
+    - "flutter analyze"
+    - "flutter test --coverage"
+    - "flutter build apk"
+
+# 使用するパッケージと制限
+dependencies:
+  allow_only:
+    - "flutter"
+    - "flutter_localizations"
+    - "provider"
+    - "dio"
+    - "freezed"
+  disallow_global_installs: true
+  enforce_dependencies: true
